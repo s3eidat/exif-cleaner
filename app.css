@@ -1,0 +1,14 @@
+.ex-note { margin: 0; }
+.ex-list { display: grid; gap: 14px; margin-top: 14px; }
+.ex-card { display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 16px; align-items: start; }
+@media (max-width: 640px) { .ex-card { grid-template-columns: minmax(0, 1fr); } .ex-thumb { max-width: 160px; } }
+.ex-thumb { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 12px; background: var(--surface-2); border: 1px solid var(--line); }
+.ex-head { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.ex-head h2 { margin: 0; font-size: 15px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; max-width: 100%; }
+.ex-gps { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; padding: 12px 14px; border-radius: 12px; background: var(--danger-soft); color: var(--danger); font-weight: 600; font-size: 13.5px; }
+.ex-gps .mono { color: var(--text); font-weight: 500; }
+.ex-ok { padding: 10px 14px; border-radius: 12px; background: var(--accent-soft); color: var(--accent); font-weight: 600; font-size: 13.5px; }
+.ex-blocks { display: flex; flex-wrap: wrap; gap: 6px; }
+.tbl td:first-child { color: var(--text-2); white-space: nowrap; width: 1%; }
+.tbl td { word-break: break-word; }
+.ex-sens td:first-child::after { content: " ●"; color: var(--warn); }

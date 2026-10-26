@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; media-src 'self' data: blob:; connect-src 'self' data: blob:; worker-src 'self' blob:; manifest-src 'self'; form-action 'none'; base-uri 'none'; object-src 'none'">
+<meta name="referrer" content="no-referrer">
+<title>EXIF Cleaner — See &amp; Remove Photo Metadata and GPS Location | S3eidat Tools</title>
+<meta name="description" content="See the hidden metadata in your photos (camera, date, GPS location) and remove it without re-compressing. JPEG and PNG, batch and zip. Free, private, nothing uploaded.">
+<meta property="og:title" content="EXIF Cleaner — remove GPS and metadata from photos, privately">
+<meta property="og:description" content="Find out what your photos reveal and strip it without quality loss. Runs 100% in your browser.">
+<meta property="og:image" content="screenshot.png">
+<link rel="icon" href="kit/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="kit/kit.css">
+<link rel="stylesheet" href="app.css">
+<script src="kit/kit.js"></script>
+</head>
+<body data-tool="exif-cleaner">
+<main class="s3-main">
+  <section class="s3-hero">
+    <h1>EXIF Cleaner</h1>
+    <p>Photos carry hidden data: the camera, the exact time and often the GPS location of where they were taken. See it, then remove it without re-compressing the picture.</p>
+  </section>
+
+  <section class="card stack">
+    <label class="drop" id="drop">
+      <input type="file" accept=".jpg,.jpeg,.jfif,.png,image/jpeg,image/png" multiple hidden>
+      <svg class="i"><use href="#i-lock"/></svg>
+      <b>Drop JPEG or PNG photos here</b>
+      <span class="faint">Checked and cleaned on your device. Nothing is uploaded.</span>
+    </label>
+    <div class="row">
+      <label class="check"><input type="checkbox" id="keepIcc" checked> Keep color profile (ICC)</label>
+      <label class="check"><input type="checkbox" id="keepOri" checked> Keep rotation (orientation only)</label>
+      <span class="grow"></span>
+      <button class="btn ghost small" id="clear" disabled><svg class="i"><use href="#i-trash"/></svg>Clear</button>
+      <button class="btn primary" id="zip" disabled><svg class="i"><use href="#i-download"/></svg>Download all clean (.zip)</button>
+    </div>
+    <p class="faint ex-note">Removes EXIF, GPS, XMP, IPTC/Photoshop data, comments, embedded thumbnails and extra images stored after the picture (JPEG), and text, EXIF and time chunks (PNG). The pixels are copied byte for byte, so quality is unchanged.</p>
+  </section>
+
+  <div class="ex-list" id="list"></div>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
